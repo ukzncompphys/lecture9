@@ -22,10 +22,10 @@ class advect:
         #now calculate the flux at the right and left edges of the cell
         #after taking half a step forward in time.
         self.right=self.rho[1:-1]+0.5*self.dx*(1.0-self.C)*self.myderiv
-        self.left=self.rho[1:-1]-0.5*self.dx*(1.0+self.C)*self.myderiv
+        #self.left=self.rho[1:-1]-0.5*self.dx*(1.0+self.C)*self.myderiv
         
     def update(self):
-        dt=self.get_ts()
+        #dt=self.get_ts()
         self.get_bc()
         self.get_interfaces()
         #Solve Riemann problem, and update.  For advection, if velocity is positive,

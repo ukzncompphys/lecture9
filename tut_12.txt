@@ -1,0 +1,14 @@
+question 1:  For the gaussian initial conditions, the error does go
+down with the square of the number of points, as we expected.  
+
+question 2: The minimod limiter does inteed get rid of the
+overshooting.  It is not, however, particularly accurate, about
+halfway between 1st and 2nd order.  For a gaussian run through 1
+period with C=0.5, I find going from 200 to 2000 points gives
+[0.044, 0.005] for the 1st order mean error
+[5.6e-4, 5.7e-6] for 2nd order mean error, and 
+[3.1e-3,4.2e-5] for the minimod limited result.  The minimod is a
+definite improvement over the 1st order, with somewhat better
+stability than the second order.  Note that in the gaussian plots, the
+2nd order solution is sufficiently accurate that it is
+indistinguishable from the true solution at the resolution of the plots.
